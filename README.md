@@ -1,8 +1,8 @@
-# Survey-System-React.js---ASP.NET-Web-API
-Survey System / React.js - ASP.Net Web API
+# React + Vite
 
-![2-yapıldı](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/bfa8f043-c4d8-45c2-b5e1-6e2bf03220ab)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-![4-yapıldı](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/f5532a77-4594-4f8a-b2fd-9b73416734b8)
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
