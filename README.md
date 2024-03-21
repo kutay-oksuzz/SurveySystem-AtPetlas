@@ -1,6 +1,6 @@
 # Survey System
 
-![Medya Oynatıcı 21 03 2024 11_42_43](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/ae9df6b4-1ab9-4d7b-9c6a-ace0f6e343b5)
+![Medya Oynatıcı 21 03 2024 11_42_43](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/d2add3ca-eeea-416d-80e2-0549d3efef25)
 
 ![2-yapıldı](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/370ee882-e5d2-4d8d-b3cd-302e5ce5dd1e)
 
