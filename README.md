@@ -8,3 +8,7 @@
 
 ![4-yapıldı](https://github.com/kutay-oksuzz/Survey-System-React.js---ASP.NET-Web-API/assets/113855499/c51d7aa4-f8f2-47fb-96b0-f57d5209c9fc)
 
+![dashboard page](https://github.com/kutay-oksuzz/Survey-System--.NET-React/assets/113855499/b8535c92-db1b-4205-86cb-91c099d78721)
+
+![result page](https://github.com/kutay-oksuzz/Survey-System--.NET-React/assets/113855499/9521177a-485d-4b55-b522-12857b33c986)
+
