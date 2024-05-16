@@ -292,127 +292,156 @@ const Modal = ({ open, onClose }) => {
       <header>
         <style>{`
            /* Modal */
-          .overlay {
-            /* background-color: rgba(0, 0, 0, 0.5); */
+           .overlay {
+            background-color: rgba(0, 0, 0, 0.25);
             position: fixed;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-          }
-          
-          .modalContainer {
-            max-width: 600px;
-            width: 100%;
-            position: fixed;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             display: flex;
-            background-color: #ffff
-            box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
-            border-radius: 8px;
-          }
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
           
-          .modalRight {
+        .modalContainer {
+          max-width: 600px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          position: fixed;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          background-color: #ffff
+          box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
+          border-radius: 8px;
+        }
+
+          
+        .form-box {
+            position: relative;
+            width: 400px;
+            height: 450px;
+            background: transparent;
+            border: none;
+            border-radius: 20px;
+            backdrop-filter: blur(50px) brightness(90%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .form-value h2 {
+            font-size: 2em;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .inputbox {
+            position: relative;
+            margin: 30px 0;
+            width: 310px;
+            border-bottom: 2px solid #fff;
+        }
+        
+        .inputbox label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1em;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+        
+        /* animations: start */
+        input:focus~label,
+        input:valid~label {
+            top: -5px;
+        }
+        
+        /* animation:end */
+        .inputbox input {
             width: 100%;
-            border-radius: 100px;
-          }
-          
-          .closeBtn {
-            position: fixed;
-            top: 8px;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            padding: 0 35px 0 5px;
+            color: #fff;
+        }
+        
+        .inputbox ion-icon {
+            position: absolute;
             right: 8px;
-            color: #ff125;
-            cursor: pointer;
-          }
-          .wrapper{
+            color: #fff;
+            font-size: 1.2em;
+            top: 20px;
+        }
+        
+        .forget {
+            margin: -10px 0 17px;
+            font-size: 0.9em;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .forget label input {
+            margin-right: 3px;
+        }
+        
+        .forget a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .forget a:hover {
+            text-decoration: underline;
+        }
+        
+        .form-value button {
             width: 100%;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255 .5);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color:rgba(244, 12, 4, 0.889);
-            border-radius: 10px;
-            padding: 70px 40px;
-            
-          }
-          .wrapper h1{
-              font-size: 2rem;
-              text-align: center;
-          }
-          .wrapper .input-box{
-              position: relative;
-              width: 100%;
-              height: 100%;
-              margin: 30px;
-              
-          }
-          .input-box input{
-              widht: 100%,
-              height: 100%;
-              background: #707b7c36;
-              outline: none;
-              border: 5px solid rgba(255, 255, 255, .2);
-              border-radius: 40px;
-              font-size: 16px;
-              color: #fff;
-              padding: 15px 225px 20px 20px;
-              
-          }
-          .input-box input::placeholder{
-              color: #fff;
-               
-          }
-          .input-box .icon{
-              position:absolute;
-              right: 100px;
-              top: 50%;
-              transform:translateY(-50%);
-              font-size: 16px;
-              
-          }
-          .wrapper .adminButton{
-              width: 100%;
-              height: 45px;
-              background: #fff;
-              border: none;
-              outline: none;
-              border-radius: 40px;
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-              cursor: pointer;
-              font-size: 16px;
-              color: #fff;
-              font-weight: 700;
-              transform: translateX(-5%);
-          }
-          #two {
-              background-image: linear-gradient(
-                to right,
-                rgba(244, 12, 4, 0.889) 50%,
-                rgba(21, 25, 99, 0.778) 50%
-              );
-              background-size: 200%;
-              transition: 0.4s ease-out;
-              
-          }
-            
-          #two:hover {
-              background-position: right;
-              position: center;
-         }
-         @media screen and (max-width: 500px) {
-              .modalContainer {
-              flex-direction: column;
-              top: 0;
-              left: 0;
-              transform: none;
-              width: 100%;
-              height: 100vh;
-          }
-          .heading {
-              margin: 1rem;
-          }
-            
-        }`}</style>
+            height: 40px;
+            border-radius: 40px;
+            background-color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+        }
+        
+        .register {
+            font-size: 0.9em;
+            color: #fff;
+            text-align: center;
+            margin: 25px 0 10px;
+        }
+        
+        .register p a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .register p a:hover {
+            text-decoration: underline;
+        }
+        
+        @media screen and (max-width: 480px) {
+            .form-box {
+                width: 100%;
+                border-radius: 0px;
+            }
+        }
+          
+        `}</style>
         <div onClick={onClose} className="overlay">
           <div
             onClick={(e) => {
@@ -420,25 +449,36 @@ const Modal = ({ open, onClose }) => {
             }}
             className="modalContainer"
           >
-            <div className="modalRight">
-              <div className="wrapper">
-                <p className="closeBtn" onClick={onClose}>
-                  X
-                </p>
-                <h1>YÖNETİCİ GİRİŞİ</h1>
-                <div className="input-box">
-                  <input type="text" placeholder="Email" required />
-                  <FaUser className="icon" />
-                </div>
-                <div className="input-box">
-                  <input type="password" placeholder="Şifre" required />
-                  <FaLock className="icon" />
-                </div>
-                <Link to="/admin">
-                  <button className="adminButton" type="submit" id="two">
-                    GİRİŞ
-                  </button>
-                </Link>
+            <div className="form-box">
+              <div className="form-value">
+                <form>
+                  <h2>Login</h2>
+                  <div className="inputbox">
+                    {" "}
+                    <ion-icon name="mail-outline"></ion-icon>{" "}
+                    <input type="email" required />
+                    <label>Email</label>
+                  </div>
+                  <div className="inputbox">
+                    {" "}
+                    <ion-icon name="lock-closed-outline"></ion-icon>{" "}
+                    <input type="password" required /> <label>Password</label>{" "}
+                  </div>
+                  <div className="forget">
+                    {" "}
+                    <label>
+                      <input type="checkbox" />
+                      Remember Me
+                    </label>{" "}
+                    <a href="#">Forgot Password</a>{" "}
+                  </div>{" "}
+                  <button>Log In</button>
+                  <div className="register">
+                    <p>
+                      Don't have an account? <a href="#">Sign Up</a>
+                    </p>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
